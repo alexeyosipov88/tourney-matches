@@ -1,11 +1,14 @@
 import Match from "./Match";
-import matchData from "../data/matchData";
 
-const MatchList = () => {
+const MatchList = ({matchData}) => {
+  const matches = matchData.map(match => {
+    return <Match key={match.matchNumber} {... match}></Match>
+  });
+
   return (
     <section className="PlayerList MatchList">
       <h1>Match list</h1>
-      <Match></Match>
+      {matches}
     </section>
   );
 };

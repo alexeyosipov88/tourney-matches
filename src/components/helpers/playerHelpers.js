@@ -3,14 +3,17 @@ const preparePlayerData = (players) => {
 }
 
 const addWinsToPlayers = (players, matches) => {
-  return package.map(element => {
-    const numberOfwins = 0;
+  
+  return players.map(element => {
+    let  numberOfwins = 0;
     for(let i = 0; i < matches.length; i++) {
-      if(matches[i].winner == element.gamerTag) {
+      if(matches[i].winner === element.gamerTag) {
         numberOfwins++;
       }
     }
     element.wins = numberOfwins;
+    console.log(element);
+
     return element;
   });
 

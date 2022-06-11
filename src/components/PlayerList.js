@@ -1,18 +1,17 @@
 import Player from "./Player";
-import playerData from "../data/playerData";
-import matchData from "../data/matchData";
-import { preparePlayerData } from "./helpers/playerHelpers";
-import { addWinsToPlayers } from "./helpers/playerHelpers";
+import { preparePlayerData, addWinsToPlayers } from "./helpers/playerHelpers";
 
 
 
-const PlayerList = () => {
-
+const PlayerList = ({playerData}) => {
+  const players = playerData.map(player => {
+    return <Player key={player.gamerTag} {... player}></Player>
+  });
   return (
 
     <section className="PlayerList">
     <h1>Current participating players</h1>
-    <Player></Player>
+    {players}
   </section>
   )
 

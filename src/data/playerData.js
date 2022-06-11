@@ -35,3 +35,6 @@ const playerData = {
     lastName: "Herrera",
   }
 }
+
+
+export default playerData;
